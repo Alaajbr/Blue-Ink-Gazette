@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Photography | Blue Ink Gazette</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Special+Elite&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background: #f5f3ef;
+      font-family: 'Special Elite', monospace;
+      color: #3a3733;
+      padding: 0;
+    }
+
+    header {
+      background: #2e2a26;
+      color: #e6ddd0;
+      text-align: center;
+      padding: 60px 20px 30px;
+      border-bottom: 4px double #c4b7aa;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-style: italic;
+      color: #b6afa3;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      background: #dbd7cf;
+      border-bottom: 1px solid #b7b0a5;
+      width: 100vw;
+      margin-left: calc(-1 * ((100vw - 100%) / 2));
+      box-sizing: border-box;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #3a3733;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      position: relative;
+      padding: 5px 0;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #3a3733;
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: #2c2a27;
+    }
+
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 60%;
+      left: 20%;
+    }
+
+    main {
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .photo-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(44, 42, 39, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      background: #faf9f6;
+      border: 1.5px solid #b7b0a5;
+    }
+
+    .photo-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(44, 42, 39, 0.2);
+      border-color: #8c877f;
+    }
+
+    .photo-card img {
+      width: 100%;
+      display: block;
+      border-radius: 14px;
+      filter: grayscale(20%);
+      transition: filter 0.4s ease;
+    }
+
+    .photo-card:hover img {
+      filter: grayscale(0%);
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(180deg, transparent, rgba(44, 42, 39, 0.85));
+      color: #faf9f6;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border-radius: 0 0 14px 14px;
+      pointer-events: none;
+    }
+
+    .photo-card:hover .overlay {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .photo-title {
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      letter-spacing: 1.2px;
+    }
+
+    .photo-desc {
+      font-weight: 400;
+      opacity: 0.8;
+      line-height: 1.4;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #8c877f;
+      text-align: center;
+      border-top: 2px dashed #b7b0a5;
+      padding: 20px 0;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Blue Ink Gazette</h1>
+    <p>Photography — capturing whispers of light and shadow</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="poetry.html">Poetry</a>
+    <a href="literature.html">Literature</a>
+    <a href="photography.html" aria-current="page">Photography</a>
+    <a href="cinematography.html">Cinematography</a>
+    <a href="art.html">Art</a>
+  </nav>
+
+  <main>
+    <article class="photo-card" tabindex="0">
+      <img src="images/forest-mist.jpg" alt="Forest in Mist" />
+      <div class="overlay">
+        <h3 class="photo-title">Forest in Mist</h3>
+        <p class="photo-desc">Soft tendrils of fog wrap ancient trees in silence.</p>
+      </div>
+    </article>
+
+    <article class="photo-card" tabindex="0">
+      <img src="images/old-window.jpg" alt="Old Window" />
+      <div class="overlay">
+        <h3 class="photo-title">Old Window</h3>
+        <p class="photo-desc">Cracked glass and peeling paint tell stories forgotten.</p>
+      </div>
+    </article>
+
+    <article class="photo-card" tabindex="0">
+      <img src="images/desert-sunset.jpg" alt="Desert Sunset" />
+      <div class="overlay">
+        <h3 class="photo-title">Desert Sunset</h3>
+        <p class="photo-desc">A blaze of amber skies fading into quiet dusk.</p>
+      </div>
+    </article>
+
+    <article class="photo-card" tabindex="0">
+      <img src="images/urban-quiet.jpg" alt="Urban Quiet" />
+      <div class="overlay">
+        <h3 class="photo-title">Urban Quiet</h3>
+        <p class="photo-desc">Empty streets hold their breath before dawn.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    &copy; 2025 Blue Ink Gazette — photography seen through vintage eyes.
+  </footer>
+
+</body>
+</html>
+
+
+    
+

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Literature | Blue Ink Gazette</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Special+Elite&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background: #f8f6f1;
+      font-family: 'Special Elite', monospace;
+      color: #3a3733;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
+
+    /* Header */
+    header {
+      background-color: #e8e3dc;
+      border-bottom: 3px double #b8afa3;
+      width: 100%;
+      padding: 60px 20px 30px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 3.5rem;
+      margin: 0;
+      color: #2c2a27;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #958e84;
+      margin-top: 8px;
+      letter-spacing: 1px;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      background: #d4cfc8;
+      padding: 15px 10px;
+      width: 100%;
+      border-bottom: 1px solid #b7aca0;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #3a3733;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background-color: #3a3733;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 60%;
+    }
+
+    /* Literature Grid */
+    .literature-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 60px 30px;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .book-card {
+      background: #fcfaf7;
+      border: 1.5px solid #c4b7aa;
+      border-radius: 12px;
+      box-shadow: 2px 3px 15px rgba(44, 42, 39, 0.1);
+      padding: 25px 30px;
+      transition: all 0.3s ease;
+      font-family: 'Special Elite', monospace;
+      cursor: pointer;
+    }
+
+    .book-card:hover {
+      background: #f3efea;
+      box-shadow: 4px 6px 25px rgba(44, 42, 39, 0.15);
+    }
+
+    .book-title {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #2c2a27;
+    }
+
+    .book-author {
+      font-style: italic;
+      color: #958e84;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .book-excerpt {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      opacity: 0;
+      max-height: 0;
+      transition: all 0.4s ease;
+      overflow: hidden;
+      color: #5b5650;
+      border-top: 1px solid #c4b7aa;
+      padding-top: 12px;
+    }
+
+    .book-card.expanded .book-excerpt {
+      opacity: 1;
+      max-height: 200px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      padding: 25px;
+      text-align: center;
+      color: #a79f95;
+      border-top: 2px dashed #c4b7aa;
+      font-size: 0.9rem;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Blue Ink Gazette</h1>
+    <p>Literature — stories carved in ink and time</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="poetry.html">Poetry</a>
+    <a href="literature.html" aria-current="page">Literature</a>
+    <a href="photography.html">Photography</a>
+    <a href="cinematography.html">Cinematography</a>
+    <a href="art.html">Art</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+
+  <main class="literature-container">
+    <article class="book-card" tabindex="0">
+      <h2 class="book-title">The Last Ember</h2>
+      <p class="book-author">by Alina J. Mercer</p>
+      <p class="book-excerpt">
+        “The fire burned low, whispering tales of old battles and silent regrets, but in the ashes, a new hope was born.”
+      </p>
+    </article>
+
+    <article class="book-card" tabindex="0">
+      <h2 class="book-title">Whispers of the Forgotten</h2>
+      <p class="book-author">by Tobias K. Lane</p>
+      <p class="book-excerpt">
+        “Beneath the crumbling walls and forgotten streets, memories danced lightly, waiting for the one who dared to remember.”
+      </p>
+    </article>
+
+    <article class="book-card" tabindex="0">
+      <h2 class="book-title">Veil of the Night</h2>
+      <p class="book-author">by Seraphine Dusk</p>
+      <p class="book-excerpt">
+        “Stars hid behind veils of midnight, and silence spoke louder than any song the world had ever known.”
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    &copy; 2025 Blue Ink Gazette — where literature lives eternal.
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.book-card');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        cards.forEach(c => { if (c !== card) c.classList.remove('expanded'); });
+        card.classList.toggle('expanded');
+      });
+
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.click();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
+
