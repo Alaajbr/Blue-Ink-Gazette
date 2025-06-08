@@ -1,111 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Ink Gazette - Home</title>
-    <style>
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            background-color: #fdf6e3;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #e7e3d6;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid #ccc;
-        }
-        header h1 {
-            margin: 0;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #e7e3d6;
-            padding: 10px 0;
-            border-top: 2px solid #ccc;
-        }
-        nav a {
-            text-decoration: none;
-            color: #333;
-            margin: 0 15px;
-            font-size: 1.2em;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .section {
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 900px;
-            background: #ffffff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .submit-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            font-size: 1.1em;
-            background-color: #333;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .submit-button:hover {
-            background-color: #555;
-        }
-        .image-gallery {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .image-gallery img {
-            width: 200px;
-            height: auto;
-            border: 2px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #e7e3d6;
-            border-top: 2px solid #ccc;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue Ink Gazette</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Special Elite', serif;
+      background: url('images/parchment-bg.jpg') repeat, #f8f6f1;
+      margin: 0;
+      padding: 0;
+      color: #2c2a27;
+    }
+
+    header {
+      background: #2e2a26;
+      color: #e6ddd0;
+      text-align: center;
+      padding: 60px 20px 30px;
+      border-bottom: 4px double #c4b7aa;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-style: italic;
+      color: #b6afa3;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      background: #d4cfc8;
+      border-bottom: 1px solid #b7aca0;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #3a3733;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      position: relative;
+      padding: 5px 0;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #3a3733;
+      transition: width .3s, left .3s;
+    }
+
+    nav a:hover::after {
+      width: 60%;
+      left: 20%;
+    }
+
+    .section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-style: italic;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: #4b4742;
+    }
+
+    .carousel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-track img {
+      width: 600px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      margin: 0 10px;
+      flex-shrink: 0;
+    }
+
+    .carousel-btn {
+      background-color: transparent;
+      border: none;
+      font-size: 2.5rem;
+      color: #7a6f63;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .submit-button, .blog-button {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .submit-button a,
+    .blog-button a {
+      background-color: #3a3733;
+      color: #f2ece6;
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+      transition: background 0.3s ease;
+    }
+
+    .submit-button a:hover,
+    .blog-button a:hover {
+      background-color: #58544d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px 60px;
+      font-size: .9rem;
+      color: #5b5650;
+      background: #f3efea;
+      border-top: 2px dashed #b7aca0;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Blue Ink Gazette</h1>
-        <p>Spreading The Love of Art</p>
-    </header>
 
-    <nav>
-        <a href="art.html">Art</a>
-        <a href="poetry.html">Poetry</a>
-        <a href="literature.html">Literature</a>
-        <a href="photography.html">Photography</a>
-        <a href="cinematography.html">Cinematography</a>
-    </nav>
+  <header>
+    <h1>Blue Ink Gazette</h1>
+    <p>Spreading the love of art — thoughtfully and tenderly</p>
+  </header>
 
-    <div class="section">
-        <h2>Welcome to Creative Magazine</h2>
-        <p>Share your Passions and Creations. "Poetry, beauty, romance, love - these are what we stay alive for".</p>
-        <div class="image-gallery">
-            <img src="https://i.pinimg.com/736x/c4/db/78/c4db78b41fec9acd3319e026864cde17.jpg" alt="Artistic Image 1">
-            <img src="https://i.pinimg.com/736x/84/01/c4/8401c4bea4cdd6f691181800424b840a.jpg" alt="Artistic Image 2">
-            <img src="https://i.pinimg.com/736x/96/ee/f3/96eef3b1fbfbe9d2e3d416d7be08afcc.jpg" alt="Artistic Image 3">
+  <nav>
+    <a href="art.html">Art</a>
+    <a href="poetry.html">Poetry</a>
+    <a href="literature.html">Literature</a>
+    <a href="photography.html">Photography</a>
+    <a href="cinematography.html">Cinematography</a>
+  </nav>
+
+  <main>
+    <section class="section">
+      <h2>Welcome to Blue Ink Gazette</h2>
+      <p>“Poetry, beauty, romance, love — these are what we stay alive for.” For the People who slip Between the Lines.</p>
+      <div class="carousel">
+        <button class="carousel-btn prev">&#10094;</button>
+        <div class="carousel-track">
+          <img src="images/ -16 copy.jpg" alt="Artistic Image 1">
+          <img src="images/ -15 copy.jpg" alt="Artistic Image 2">
+          <img src="images/ -16 copy.jpg" alt="Artistic Image 3">
         </div>
-        <a class="submit-button" href="https://docs.google.com/forms/d/e/1FAIpQLSeTcOpqK8GA9MP0-JEOZvL_Q16HnpZM678AJrJxewfD1X5j0w/viewform?usp=sf_link" target="_blank">Submit Your Work</a>
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
+    </section>
+
+    <div class="submit-button">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTcOpqK8GA9MP0-JEOZvL_Q16HnpZM678AJrJxewfD1X5j0w/viewform?usp=sf_link" target="_blank">
+        Submit Your Work
+      </a>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Creative Magazine. All rights reserved.</p>
-    </footer>
+    <div class="blog-button">
+      <a href="blog.html">
+        Visit Our Blog
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Blue Ink Gazette — soft and sincere stories archived in parchment.</p>
+  </footer>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const images = Array.from(track.children);
+    const nextButton = document.querySelector('.next');
+    const prevButton = document.querySelector('.prev');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const imageWidth = images[0].getBoundingClientRect().width;
+      track.style.transform = `translateX(-${imageWidth * currentIndex}px)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+      if (currentIndex < images.length - 1) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+
+    prevButton.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    });
+
+    window.addEventListener('resize', updateCarousel);
+  </script>
+
 </body>
 </html>
+
+
+
