@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cinematography | Blue Ink Gazette</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Special+Elite&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background: #f5f3ef;
+      font-family: 'Special Elite', monospace;
+      color: #3a3733;
+      padding: 0;
+    }
+
+    header {
+      background: #2e2a26;
+      color: #e6ddd0;
+      text-align: center;
+      padding: 60px 20px 30px;
+      border-bottom: 4px double #c4b7aa;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-style: italic;
+      color: #b6afa3;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      background: #dbd7cf;
+      border-bottom: 1px solid #b7b0a5;
+      width: 100vw;
+      margin-left: calc(-1 * ((100vw - 100%) / 2));
+      box-sizing: border-box;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #3a3733;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      position: relative;
+      padding: 5px 0;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #3a3733;
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: #2c2a27;
+    }
+
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 60%;
+      left: 20%;
+    }
+
+    main {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .no-submissions {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      color: #8c877f;
+      background-color: #f0ede8;
+      padding: 40px;
+      border: 2px dashed #b7b0a5;
+      border-radius: 12px;
+      margin-top: 50px;
+    }
+
+    footer {
+      margin-top: 80px;
+      font-size: 0.9rem;
+      color: #8c877f;
+      text-align: center;
+      border-top: 2px dashed #b7b0a5;
+      padding: 20px 0;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Blue Ink Gazette</h1>
+    <p>Cinematography — the art of motion and mood</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="poetry.html">Poetry</a>
+    <a href="literature.html">Literature</a>
+    <a href="photography.html">Photography</a>
+    <a href="cinematography.html" aria-current="page">Cinematography</a>
+    <a href="art.html">Art</a>
+  </nav>
+
+  <main>
+    <div class="no-submissions">
+      Unfortunately, there are no submissions yet.
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Blue Ink Gazette — capturing film through vintage eyes.
+  </footer>
+
+</body>
+</html>
+

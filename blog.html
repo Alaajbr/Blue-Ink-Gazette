@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blue Ink Gazette | Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #f8f6f1;
+      font-family: 'Special Elite', serif;
+      color: #2c2a27;
+    }
+
+    header {
+      background: #2e2a26;
+      color: #e6ddd0;
+      text-align: center;
+      padding: 50px 20px;
+      border-bottom: 3px double #c4b7aa;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .back-button {
+      display: flex;
+      justify-content: center;
+      margin: 40px 0;
+    }
+
+    .back-button a {
+      text-decoration: none;
+      background-color: #7a5c4c;
+      color: white;
+      padding: 12px 28px;
+      font-size: 1rem;
+      border-radius: 25px;
+      font-family: 'Special Elite', serif;
+      font-weight: normal;
+      transition: background 0.3s;
+    }
+
+    .back-button a:hover {
+      background-color: #5e4434;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #5b5650;
+      background: #f3efea;
+      border-top: 2px dashed #b7aca0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Blue Ink Gazette Blog</h1>
+    <p style="font-style: italic;">Snapshots of inspiration</p>
+  </header>
+
+  <div class="gallery">
+    <img src="images/ -14.jpg" alt="Art 1">
+    <img src="images/Screenshot 2025-06-07 at 10.05.19 PM.png" alt="Art 2">
+    <img src="images/ -16.jpg" alt="Art 3">
+    <img src="images/Screenshot 2025-06-07 at 10.12.01 PM.png" alt="Art 4">
+    <img src="images/ -17 copy.jpg" alt="Art 5">
+    <img src="images/@sharluvie ૮˃̵֊ ˂̵ ა.jpg" alt="Art 6">
+  </div>
+
+  <div class="back-button">
+    <a href="index.html">← Go Back</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Blue Ink Gazette — curated moments in scroll.
+  </footer>
+
+</body>
+</html>
+
