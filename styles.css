@@ -1,0 +1,103 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f5f0e6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #e7e3da;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  h1 {
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+  
+  nav {
+    background-color: #c3bca8;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px 0;
+  }
+  
+  nav a {
+    color: #2f2f2f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .section {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-track img {
+    width: 600px;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 10px;
+  }
+  
+  .carousel-btn {
+    background-color: #c3bca8;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  
+  .prev {
+    left: 0;
+  }
+  
+  .next {
+    right: 0;
+  }
+  
+  .submit-button {
+    text-align: center;
+    margin: 30px 0;
+  }
+  
+  .submit-button a {
+    background-color: #a68973;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 20px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e7e3da;
+    border-top: 2px solid #ccc;
+  }
